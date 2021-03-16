@@ -1,0 +1,98 @@
+@import "variables";
+html {
+  font-size: 100%;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
+body {
+  //   font-size: 1.2rem;
+  // font-family: "Catamaran", sans-serif;
+  line-height: 1.6;
+  width: 100vw;
+}
+.container {
+  position: relative;
+  min-height: 100%;
+  background-color: #000;
+}
+.flex {
+  display: flex;
+}
+.flex-jc-c {
+  justify-content: center;
+}
+.flex-jc-sb {
+  justify-content: space-between;
+}
+.flex-ai-c {
+  align-items: center;
+}
+.flex-fd-c {
+  flex-direction: column;
+}
+.m0a {
+  margin: 0 auto;
+}
+.pv-r {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.ph-l {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-left: 1px solid rgba($color: $accent-color, $alpha: 0.1);
+  .logo {
+    background-color: #fff;
+  }
+  nav {
+    background-color: #fff;
+    flex: 1;
+    ul {
+      border-top: 1px solid rgba($color: $accent-color, $alpha: 0.1);
+      li {
+        flex: 1 0 auto;
+        color: $accent-color;
+        &:not(:last-child) {
+          border-bottom: 1px solid rgba($color: $accent-color, $alpha: 0.1);
+        }
+        a {
+          height: 100%;
+          &:hover {
+            background-color: $accent-color;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+main {
+  padding-right: 5rem;
+  background-color: $accent-color;
+  height: 100vh;
+}
+.page {
+  display: none;
+}
+.active {
+  display: flex;
+}

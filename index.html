@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Oluwaseun Abiola</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="flex flex-fd-c">
+        <div class="logo flex flex-jc-c pv-r">OOA</div>
+        <nav class="flex">
+          <ul class="flex flex-fd-c">
+            <li>
+              <a
+                href="#"
+                data-route="home"
+                class="route flex flex-jc-c flex-ai-c ph-l"
+                >H</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                data-route="about"
+                class="route flex flex-jc-c flex-ai-c ph-l"
+                >A</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                data-route="portfolio"
+                class="route flex flex-jc-c flex-ai-c ph-l"
+                >P</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                data-route="skills"
+                class="route flex flex-jc-c flex-ai-c ph-l"
+                >S</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main class="flex">
+        <section class="page active" data-page="home">Home</section>
+        <section class="page" data-page="about">About</section>
+        <section class="page" data-page="portfolio">Portfolio</section>
+        <section class="page" data-page="skills">Skills</section>
+      </main>
+    </div>
+    <script>
+      function __(selector) {
+        return document.querySelectorAll(selector);
+      }
+      function _(selector) {
+        return document.querySelector(selector);
+      }
+
+      let currentPage = "home";
+      const pages = __(".page");
+
+      function showCurrentPage() {
+        pages.forEach(function (page) {
+          page.style.display = "none";
+        });
+
+        for (let i = 0; i < pages.length; i++) {
+          pages[i].dataset.page === currentPage &&
+            (pages[i].style.display = "flex");
+        }
+      }
+      function setCurrentPage(page) {
+        currentPage = page;
+      }
+      __(".route").forEach(function (route) {
+        route.addEventListener("click", (e) => {
+          e.preventDefault();
+          setCurrentPage(route.dataset.route);
+          showCurrentPage();
+        });
+      });
+    </script>
+  </body>
+</html>
