@@ -1,4 +1,9 @@
 @import "variables";
+@import "about";
+@import "flexi";
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;900&display=swap");
+
 html {
   font-size: 100%;
 }
@@ -18,81 +23,127 @@ li {
   list-style-type: none;
 }
 body {
-  //   font-size: 1.2rem;
-  // font-family: "Catamaran", sans-serif;
+  font-size: 1.2rem;
+  font-family: "Montserrat", sans-serif;
   line-height: 1.6;
   width: 100vw;
 }
 .container {
   position: relative;
-  min-height: 100%;
-  background-color: #000;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: $primary-color;
 }
-.flex {
-  display: flex;
-}
-.flex-jc-c {
-  justify-content: center;
-}
-.flex-jc-sb {
-  justify-content: space-between;
-}
-.flex-ai-c {
+.container > header {
   align-items: center;
-}
-.flex-fd-c {
-  flex-direction: column;
-}
-.m0a {
-  margin: 0 auto;
-}
-.pv-r {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-.ph-l {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-header {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  border-left: 1px solid rgba($color: $accent-color, $alpha: 0.1);
+  padding: 1rem 2rem;
+  background-color: $primary-color;
+
+  .menu {
+    margin-right: 2rem;
+    cursor: pointer;
+    span {
+      display: block;
+      width: 30px;
+      height: 1px;
+      background-color: $secondary-color;
+      transition: all ease-in-out 200ms;
+      &:not(:last-child) {
+        margin-bottom: 4.5px;
+      }
+    }
+    @media screen and (min-width: $laptop-up) {
+      display: none;
+    }
+  }
+  .open {
+    span {
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(4px, 4px);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(4px, -4px);
+      }
+    }
+  }
+
   .logo {
-    background-color: #fff;
+    color: $secondary-color;
+    @media screen and (min-width: $laptop-up) {
+      background-color: $background-color;
+      width: 100%;
+    }
   }
   nav {
-    background-color: #fff;
-    flex: 1;
-    ul {
-      border-top: 1px solid rgba($color: $accent-color, $alpha: 0.1);
-      li {
-        flex: 1 0 auto;
-        color: $accent-color;
-        &:not(:last-child) {
-          border-bottom: 1px solid rgba($color: $accent-color, $alpha: 0.1);
-        }
-        a {
-          height: 100%;
-          &:hover {
-            background-color: $accent-color;
-            color: #fff;
+    display: none;
+    background-color: $secondary-color;
+    color: #fff;
+    @media screen and (min-width: $laptop-up) {
+      display: flex;
+      flex: 1;
+      ul {
+        border-top: 1px solid rgba($color: $secondary-color, $alpha: 0.1);
+        li {
+          flex: 1 0 auto;
+          &:not(:last-child) {
+            border-bottom: 1px solid rgba($color: $secondary-color, $alpha: 0.1);
+          }
+          a {
+            height: 100%;
+            &:hover {
+              background-color: #fff;
+              color: $secondary-color;
+            }
           }
         }
       }
     }
   }
+  .nav-open {
+    position: fixed;
+    display: flex;
+    width: 0;
+    height: 100vh;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    overflow-x: hidden;
+    transition: all ease-in-out 2000ms;
+  }
+  @media screen and (min-width: $laptop-up) {
+    padding: unset;
+    flex-direction: column;
+    position: fixed;
+    // border-right: 1px solid rgba($color: $secondary-color, $alpha: 0.1);
+    top: 0;
+    bottom: 0;
+  }
 }
 main {
-  padding-right: 5rem;
-  background-color: $accent-color;
+  display: flex;
   height: 100vh;
+  @media screen and (min-width: $laptop-up) {
+    margin-left: 5rem;
+  }
 }
 .page {
   display: none;
+  flex: 1;
+  margin: 0 auto;
+  .sub-section {
+    width: 50%;
+  }
 }
 .active {
   display: flex;
+}
+
+.bg-r {
+  background-color: $background-color;
+}
+.bg-s {
+  background-color: $secondary-color;
 }

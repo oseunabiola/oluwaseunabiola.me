@@ -1,1 +1,40 @@
-$accent-color: #02a2c4;
+// $primary-color: #62acb5;
+$primary-color: #b2b356;
+// $primary-light-color: #def2f1;
+// $secondary-color: #17252a;
+// $secondary-color: #b34744;
+$secondary-color: #464c43;
+$secondary-light-color: #52594f;
+// $background-color: #feffff;
+$background-color: #e9e8e5;
+$white: #fff;
+
+// $primary-color: #3aafa9;
+// $primary-light-color: #def2f1;
+// $secondary-color: #17252a;
+// $secondary-light-color: #2b7a78;
+// $background-color: #feffff;
+
+// Primary color
+// A primary color is the color displayed most frequently
+// across your app’s screens and components. Your primary
+// color can be used to make a color theme for your app,
+// including dark and light primary color variants.
+
+// SECONDARY COLORS
+// Floating action buttons
+// Selection controls, like sliders and switches
+// Highlighting selected text
+// Progress bars
+// Links and headlines
+
+$laptop-up: 769px;
+$tablet-up: 481px;
+$tablet-down: 768px;
+$mobile-down: 480px;
+
+// 320px — 480px: Mobile devices
+// 481px — 768px: iPads, Tablets
+// 769px — 1024px: Small screens, laptops
+// 1025px — 1200px: Desktops, large screens
+// 1201px and more —  Extra large screens, TV

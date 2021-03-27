@@ -9,9 +9,12 @@
   </head>
   <body>
     <div class="container">
-      <header class="flex flex-fd-c">
-        <div class="logo flex flex-jc-c pv-r">OOA</div>
-        <nav class="flex">
+      <header class="flex">
+        <div class="menu" id="menu">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="logo pv-1 ph-1">OOA</div>
+        <nav>
           <ul class="flex flex-fd-c">
             <li>
               <a
@@ -48,11 +51,57 @@
           </ul>
         </nav>
       </header>
-      <main class="flex">
-        <section class="page active" data-page="home">Home</section>
-        <section class="page" data-page="about">About</section>
-        <section class="page" data-page="portfolio">Portfolio</section>
-        <section class="page" data-page="skills">Skills</section>
+      <main>
+        <section class="page flex flex-wrap" data-page="home">
+          <div class="flex flex-fd-c flex-jc-c flex-ai-c col-l-60 bg-p ph-1">
+            <p class="fw-700 color-sec">Hello</p>
+            <span class="fs-3 lh-1 fw-700 color-white lspacing--2">
+              I'm Oluwaseun
+            </span>
+            <p class="pv-0-5 color-white fs-1-5 fw-500">
+              I am a Frontend Developer
+            </p>
+            <div class="pv-0-5">
+              <a
+                href="mailto:oluabiolaseun@gmail.com"
+                class="btn btn-primary cta"
+                >Email Me</a
+              >
+            </div>
+          </div>
+
+          <div class="col-l-40 bg-r">
+            <div>img Slider goes here</div>
+            <div>Slider control goes here</div>
+          </div>
+        </section>
+        <section class="page flex-jc-c flex-ai-c" data-page="about">
+          <div class="flex flex-ai-c bg-r">
+            <div class="sub-section bg-s mh-2">
+              <div class="photo-grid">
+                <span class="bg-s"></span><span class="bg-s"></span
+                ><span class="bg-s"></span><span class="bg-s"></span
+                ><span class="bg-s"></span><span class="bg-s"></span
+                ><span class="bg-s"></span><span class="bg-s"></span
+                ><span class="bg-s"></span>
+              </div>
+            </div>
+            <div class="sub-section ph-1">
+              <header class="fw-900 fs-4">About</header>
+              Oluwaseun Abiola is a front-end developer passionate about making
+              user friendly and safe app. When she's not coding, you can find me
+              geeking about photography, trying new food recipes, and exploring
+              different ways of creating content that can help people pivot
+              their tech careers.
+            </div>
+          </div>
+        </section>
+        <section class="page flex-jc-c flex-ai-c" data-page="portfolio">
+          Portfolio
+        </section>
+        <section class="page flex-jc-c flex-ai-c" data-page="skills">
+          Skills
+        </section>
       </main>
     </div>
     <script>
@@ -63,19 +112,29 @@
         return document.querySelector(selector);
       }
 
+      _("#menu").addEventListener("click", function () {
+        _("#menu").classList.toggle("open");
+        _("nav").classList.toggle("nav-open");
+        if (_("#menu").classList.contains("open")) {
+          _(".nav-open").style.width = "100%";
+        }
+      });
+
       let currentPage = "home";
       const pages = __(".page");
 
       function showCurrentPage() {
         pages.forEach(function (page) {
-          page.style.display = "none";
+          page.classList.remove("active");
         });
 
         for (let i = 0; i < pages.length; i++) {
           pages[i].dataset.page === currentPage &&
-            (pages[i].style.display = "flex");
+            pages[i].classList.add("active");
         }
       }
+
+      showCurrentPage();
       function setCurrentPage(page) {
         currentPage = page;
       }
