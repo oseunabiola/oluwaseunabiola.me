@@ -54,6 +54,12 @@
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
+.fs-4 {
+  font-size: 3rem;
+  @media screen and (min-width: $laptop-up) {
+    font-size: 4rem;
+  }
+}
 .fs-3 {
   font-size: 2rem;
   @media screen and (min-width: $laptop-up) {
@@ -76,14 +82,17 @@
   font-style: italic;
 }
 
+.fw-900 {
+  font-weight: 900;
+}
 .fw-700 {
   font-weight: 700;
 }
 .fw-500 {
   font-weight: 500;
 }
-.fw-900 {
-  font-weight: 900;
+.fw-100 {
+  font-weight: 100;
 }
 .lh-1 {
   line-height: 1;
@@ -94,14 +103,22 @@
     letter-spacing: -2px;
   }
 }
+.hide-ows {
+  @media screen and (min-width: $laptop-up) {
+    display: none;
+  }
+}
 .color-white {
   color: $white;
 }
 .color-sec {
   color: $secondary-color;
 }
-.col-l-60 {
+.col-l-60,
+.col-l-40 {
   flex: 0 0 100%;
+}
+.col-l-60 {
   @media screen and (min-width: $laptop-up) {
     flex: 0 0 60%;
   }
@@ -110,10 +127,6 @@
   @media screen and (min-width: $laptop-up) {
     flex: 0 0 40%;
   }
-}
-.col-l-60,
-.col-l-40 {
-  flex: 0 0 100%;
 }
 .bg-p {
   background-color: $primary-color;

@@ -15,6 +15,13 @@
         </div>
         <div class="logo pv-1 ph-1">OOA</div>
         <nav>
+          <div
+            class="hide-ows close-menu flex flex-jc-c flex-ai-c"
+            id="close-menu"
+          >
+            <span>&times;</span>
+          </div>
+
           <ul class="flex flex-fd-c">
             <li>
               <a
@@ -113,11 +120,12 @@
       }
 
       _("#menu").addEventListener("click", function () {
-        _("#menu").classList.toggle("open");
-        _("nav").classList.toggle("nav-open");
-        if (_("#menu").classList.contains("open")) {
-          _(".nav-open").style.width = "100%";
-        }
+        _("nav").classList.remove("nav-close");
+        _("nav").classList.add("nav-open");
+      });
+      _("#close-menu").addEventListener("click", function () {
+        _("nav").classList.remove("nav-open");
+        _("nav").classList.add("nav-close");
       });
 
       let currentPage = "home";
