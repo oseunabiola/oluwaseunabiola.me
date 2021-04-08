@@ -1,6 +1,7 @@
 @import "variables";
 @import "about";
 @import "flexi";
+@import "keyframes";
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;900&display=swap");
 
@@ -42,6 +43,7 @@ body {
   .menu {
     margin-right: 2rem;
     cursor: pointer;
+    transition: 350ms;
     span {
       display: block;
       width: 30px;
@@ -56,6 +58,32 @@ body {
       display: none;
     }
   }
+  .close-menu {
+    position: absolute;
+    margin-right: unset;
+    right: 2rem;
+    z-index: 5;
+    width: 2rem;
+    height: 2rem;
+    span {
+      position: absolute;
+      top: 0.8rem;
+      width: 2rem;
+      height: 0.8px;
+      background-color: $white;
+
+      &:nth-child(1) {
+        margin: unset;
+        transform: rotate(45deg);
+      }
+      &:nth-child(2) {
+        display: none;
+      }
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+    }
+  }
   .logo {
     color: $secondary-color;
     @media screen and (min-width: $laptop-up) {
@@ -68,7 +96,7 @@ body {
     overflow-x: hidden;
     background-color: $secondary-color;
     color: #fff;
-    transition: left 350ms ease-in-out;
+    transition: 350ms;
     @media screen and (min-width: $laptop-up) {
       display: flex;
       flex: 1;
@@ -76,6 +104,7 @@ body {
         border-top: 1px solid rgba($color: $secondary-color, $alpha: 0.1);
         li {
           flex: 1 0 auto;
+          position: relative;
           a {
             height: 100%;
             &:hover {
@@ -87,26 +116,6 @@ body {
       }
     }
   }
-  @keyframes slide-in {
-    0% {
-      left: -100%;
-    }
-    100% {
-      left: 0;
-    }
-  }
-  @keyframes slide-out {
-    0% {
-      left: 0;
-    }
-    100% {
-      left: -100%;
-    }
-  }
-  .nav-close {
-    animation: slide-out 350ms ease-in-out;
-    left: -100%;
-  }
   .nav-open {
     display: flex;
     position: fixed;
@@ -117,20 +126,7 @@ body {
     right: 0;
     animation: slide-in 350ms ease-in-out;
     overflow-x: hidden;
-    .close-menu {
-      position: absolute;
-      cursor: pointer;
-      top: 1.5rem;
-      right: 2rem;
-      width: 2rem;
-      height: 2rem;
-      z-index: 5;
-      font-size: 5rem;
-      font-weight: 100;
-      span {
-        line-height: 0;
-      }
-    }
+
     ul {
       flex: 1;
       li {
@@ -161,6 +157,77 @@ main {
     margin-left: 5rem;
   }
 }
+.welcome,
+.slide-container {
+  @media screen and (max-width: $tablet-down) {
+    min-height: 100vh;
+  }
+}
+.welcome {
+  .scroll-down {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    border: 1px solid rgba($color: $secondary-color, $alpha: 0.8);
+    border-radius: 20px;
+    width: 2rem;
+    height: 3.5rem;
+    padding: 0.5rem;
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: $secondary-color;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      margin: 0 auto;
+      animation-name: scroll-down;
+      animation-duration: 1500ms;
+      animation-iteration-count: infinite;
+    }
+  }
+}
+.slide-container {
+  height: 100%;
+  &__image {
+    flex: 0 0 85%;
+    background-color: $black;
+    color: $white;
+    img {
+      width: 100%;
+      background-color: $secondary-color;
+    }
+  }
+  &__controls {
+    flex: 0 0 15%;
+    .slide-container__indicators {
+      span {
+        display: inline-block;
+        width: 0.8rem;
+        height: 0.8rem;
+        border: 2px solid $secondary-light-color;
+        border-radius: 50%;
+        transition: 1000ms;
+        &:not(:last-child) {
+          margin-right: 0.2rem;
+        }
+      }
+      .current-slide {
+        transform: scale(1.3);
+        background-color: $secondary-color;
+      }
+    }
+  }
+  .prev,
+  .next {
+    border: 1px solid transparent;
+    cursor: pointer;
+    &:hover {
+      border: 1px solid rgba($color: $black, $alpha: 0.6);
+    }
+  }
+}
+
 .page {
   display: none;
   flex: 1;
