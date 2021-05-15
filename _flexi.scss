@@ -1,3 +1,15 @@
+:root {
+  --spacing1: 1rem;
+  --spacing2: 2rem;
+  @media screen and (min-width: 769px) {
+    --spacing1: 1.5rem;
+    --spacing2: 4rem;
+  }
+}
+
+.grid {
+  display: grid;
+}
 .flex {
   display: flex;
 }
@@ -6,6 +18,9 @@
 }
 .flex-jc-sb {
   justify-content: space-between;
+}
+.flex-jc-se {
+  justify-content: space-evenly;
 }
 .flex-ai-c {
   align-items: center;
@@ -23,8 +38,12 @@
   margin: 0 auto;
 }
 .mh-2 {
-  padding-left: 2rem;
-  padding-right: 2rem;
+  margin-left: var(--spacing2);
+  margin-right: var(--spacing2);
+}
+.mv-2 {
+  margin-top: var(--spacing2);
+  margin-bottom: var(--spacing2);
 }
 .mr-1 {
   margin-right: 1rem;
@@ -34,16 +53,12 @@
   padding-bottom: 0.5rem;
 }
 .pv-1 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  @media screen and (min-width: $laptop-up) {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
+  padding-top: var(--spacing1);
+  padding-bottom: var(--spacing1);
 }
 .pv-2 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: var(--spacing2);
+  padding-bottom: var(--spacing2);
 }
 .pv-3 {
   padding-top: 3rem;
@@ -63,6 +78,14 @@
   @media screen and (min-width: $laptop-up) {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+}
+.ph-3 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  @media screen and (min-width: $laptop-up) {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 .fs-4 {
@@ -126,12 +149,18 @@
   color: $secondary-color;
 }
 .col-l-60,
+.col-l-50,
 .col-l-40 {
   flex: 0 0 100%;
 }
 .col-l-60 {
   @media screen and (min-width: $laptop-up) {
     flex: 0 0 60%;
+  }
+}
+.col-l-50 {
+  @media screen and (min-width: $laptop-up) {
+    flex: 0 0 50%;
   }
 }
 .col-l-40 {

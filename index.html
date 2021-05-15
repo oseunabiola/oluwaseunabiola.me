@@ -60,9 +60,15 @@
         </nav>
       </header>
       <main>
-        <section class="page flex flex-wrap" data-page="home">
+        <section class="page" data-page="home">
           <div
-            class="welcome flex flex-fd-c flex-jc-c flex-ai-c col-l-60 bg-p ph-1 pv-3"
+            class="
+              welcome
+              flex flex-fd-c flex-jc-c flex-ai-c flex-wrap
+              col-l-60
+              ph-1
+              pv-3
+            "
           >
             <p class="fw-700 color-sec">Hello</p>
             <span class="fs-3 lh-1 fw-700 color-white lspacing--2">
@@ -114,32 +120,36 @@
             </div>
           </div>
         </section>
-        <section class="page flex-jc-c flex-ai-c" data-page="about">
-          <div class="flex flex-ai-c bg-r">
-            <div class="sub-section bg-s mh-2">
-              <div class="photo-grid">
-                <span class="bg-s"></span><span class="bg-s"></span
-                ><span class="bg-s"></span><span class="bg-s"></span
-                ><span class="bg-s"></span><span class="bg-s"></span
-                ><span class="bg-s"></span><span class="bg-s"></span
-                ><span class="bg-s"></span>
-              </div>
+        <section class="page ph-3 pv-3" data-page="about">
+          <div class="flex flex-ai-c flex-wrap bg-r col-l-50 ph-1 pv-1">
+            <div class="photo-grid">
+              <span class="bg-s"></span><span class="bg-s"></span>
+              <span class="bg-s"></span><span class="bg-s"></span>
             </div>
-            <div class="sub-section ph-1">
-              <header class="fw-900 fs-4">About</header>
-              Oluwaseun Abiola is a front-end developer passionate about making
-              user friendly and safe app. When she's not coding, you can find me
-              geeking about photography, trying new food recipes, and exploring
-              different ways of creating content that can help people pivot
-              their tech careers.
-            </div>
+          </div>
+          <div class="flex flex-fd-c flex-ai-c col-l-50 ph-1 pv-2">
+            <header class="fw-900 fs-4">About</header>
+            Oluwaseun Abiola is a front-end developer passionate about making
+            user friendly and safe app. When he's not coding, you can find me
+            geeking about photography, trying new food recipes, and exploring
+            different ways of creating content that can help people pivot their
+            tech careers.
           </div>
         </section>
         <section class="page flex-jc-c flex-ai-c" data-page="portfolio">
           Portfolio
         </section>
-        <section class="page flex-jc-c flex-ai-c" data-page="skills">
-          Skills
+        <section class="page" data-page="skills">
+          <div class="flex flex-jc-c flex-ai-c">
+            <ul class="grid mh-2 pv-2 bg-s">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JS</li>
+              <li>Sass</li>
+              <li>React</li>
+              <li>GIT VS</li>
+            </ul>
+          </div>
         </section>
       </main>
     </div>
@@ -156,17 +166,17 @@
         _("nav").classList.toggle("nav-open");
       });
 
-      let currentPage = "home";
+      let currentPage = "skills";
       const pages = __(".page");
 
       function showCurrentPage() {
         pages.forEach(function (page) {
-          page.classList.remove("active");
+          page.classList.remove("current-page");
         });
 
         for (let i = 0; i < pages.length; i++) {
           pages[i].dataset.page === currentPage &&
-            pages[i].classList.add("active");
+            pages[i].classList.add("current-page");
         }
       }
 
@@ -178,6 +188,8 @@
         route.addEventListener("click", (e) => {
           e.preventDefault();
           setCurrentPage(route.dataset.route);
+          _("#menu").classList.remove("close-menu");
+          _("nav").classList.remove("nav-open");
           showCurrentPage();
         });
       });
