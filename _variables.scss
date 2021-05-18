@@ -1,5 +1,5 @@
 // $primary-color: #62acb5;
-$primary-color: #b2b356;
+$primary-color: #23a455;
 // $primary-light-color: #def2f1;
 // $secondary-color: #17252a;
 // $secondary-color: #b34744;
@@ -29,10 +29,11 @@ $black: #000;
 // Progress bars
 // Links and headlines
 
-$laptop-up: 769px;
-$tablet-up: 481px;
+$mobile-down: 425px;
+$tablet-up: 426px;
 $tablet-down: 768px;
-$mobile-down: 480px;
+$laptop-up: 769px;
+$laptop-down: 1440px;
 
 // 320px — 480px: Mobile devices
 // 481px — 768px: iPads, Tablets

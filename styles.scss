@@ -8,21 +8,34 @@
 :root {
   --spacing1: 1rem;
   --spacing2: 2rem;
+  --spacing3: 3rem;
   --spacing5: 5rem;
   --spacing7: 7rem;
   --spacing10: 10rem;
+  @media screen and (min-width: $tablet-up) {
+    --spacing1: 1.807rem;
+    --spacing2: 3.614rem;
+    --spacing3: 5.421rem;
+    --spacing5: 9.035rem;
+    --spacing7: 12.649rem;
+    --spacing10: 18.07rem;
+  }
 
   @media screen and (min-width: $laptop-up) {
-    --spacing1: 1.5rem;
-    --spacing2: 3rem;
-    --spacing5: 7rem;
-    --spacing7: 10rem;
-    --spacing10: 15rem;
+    --spacing1: 2.4033rem;
+    --spacing2: 4.807rem;
+    --spacing3: 7.21rem;
+    --spacing5: 12.017rem;
+    --spacing7: 16.823rem;
+    --spacing10: 24.033rem;
   }
 }
 
 html {
-  font-size: 100%;
+  font-size: 12px;
+  @media screen and (min-width: $laptop-up) {
+    font-size: 16px;
+  }
 }
 *,
 *::before,
@@ -45,245 +58,108 @@ body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.6;
   width: 100vw;
+  height: 100vh;
 }
 .container {
-  position: relative;
-  min-width: 320px;
-  width: 100vw;
+  min-width: 20rem;
+  max-width: 90rem;
+  width: 100%;
+  border-bottom: 1px solid rosybrown;
 }
 .container > header {
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: $primary-color;
-
-  .menu {
-    margin-right: 2rem;
-    cursor: pointer;
-    transition: 350ms;
-    span {
-      display: block;
-      width: 30px;
-      height: 1px;
-      // background-color: $secondary-color;
-      transition: all ease-in-out 200ms;
-      &:not(:last-child) {
-        margin-bottom: 4.5px;
-      }
-    }
-    @media screen and (min-width: $laptop-up) {
-      display: none;
-    }
+  // border-bottom: 1px solid red;
+  background-color: #f5f5f5;
+  position: relative;
+  justify-content: center;
+  @media screen and (min-width: $laptop-up) {
+    justify-content: space-between;
   }
-  .close-menu {
+  .menu-icon {
     position: absolute;
-    margin-right: unset;
-    right: 2rem;
-    z-index: 5;
-    width: 2rem;
-    height: 2rem;
+    left: var(--spacing3);
+    width: var(--spacing3);
+    max-width: 3rem;
+    height: calc(var(--spacing2) * 0.7);
+    transition: 350ms;
+    // border: 1px solid black;
     span {
       position: absolute;
-      top: 0.8rem;
-      width: 2rem;
-      height: 0.8px;
+      min-width: 2rem;
+      max-width: 3rem;
+      width: 100%;
+      height: 1.4px;
+      background-color: black;
+      transition: 500ms;
+      transition-delay: 100ms;
+      &:first-child {
+        transform: translateY(-7px);
+      }
+      &:last-child {
+        transform: translateY(7px);
+      }
+    }
+  }
+  .menu-close {
+    margin-top: 1.5rem;
+    left: 64vw;
+    z-index: 3;
+    span {
       background-color: $white;
-
-      &:nth-child(1) {
-        margin: unset;
-        transform: rotate(45deg);
+      &:first-child {
+        transform: translateY(0) rotate(45deg);
       }
       &:nth-child(2) {
         display: none;
       }
-      &:nth-child(3) {
-        transform: rotate(-45deg);
+      &:last-child {
+        transform: translateY(0) rotate(-45deg);
       }
     }
   }
-  .logo {
-    color: $secondary-color;
-    @media screen and (min-width: $laptop-up) {
-      background-color: $background-color;
-      width: 100%;
-    }
-  }
   nav {
-    display: none;
-    overflow-x: hidden;
-    color: #fff;
-    transition: 350ms;
-    @media screen and (min-width: $laptop-up) {
-      display: flex;
-      flex: 1;
-      ul {
-        border-top: 1px solid rgba($color: $secondary-color, $alpha: 0.1);
-        li {
-          flex: 1 0 auto;
-          position: relative;
-          a {
-            height: 100%;
-            &:hover {
-              background-color: #fff;
-              color: $secondary-color;
-            }
-          }
-        }
+    position: absolute;
+    width: 0;
+    height: 100vh;
+    left: -80vw;
+    top: 0;
+    background-color: $primary-color;
+    color: $white;
+    transition: 800ms;
+    ul {
+      margin-top: 6rem;
+    }
+    ul > li > a {
+      display: block;
+      padding: 2rem 3rem;
+      &:hover {
+        background-color: $white;
+        color: $primary-color;
       }
     }
   }
   .nav-open {
-    display: flex;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    animation: slide-in 350ms ease-in-out;
-    overflow-x: hidden;
+    left: 0;
+    width: 80vw;
+    box-shadow: 0 2px 20px #333;
 
-    ul {
-      flex: 1;
-      li {
-        flex: 1 0 auto;
-        a {
-          height: 100%;
-          &:hover,
-          &:active {
-            background-color: $primary-color;
-            color: $secondary-color;
-          }
-        }
-      }
+    .active-route {
+      background-color: $white;
+      color: $primary-color;
     }
+  }
+}
+.hero {
+  padding-top: 10vh;
+  background-color: #f5f5f5;
+  &__name {
+    font-size: 2.8rem;
+  }
+  &__role {
+    font-size: 1.7rem;
+    color: #666;
   }
   @media screen and (min-width: $laptop-up) {
-    padding: unset;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    bottom: 0;
+    padding-top: 20vh;
+    padding-bottom: 20vh;
   }
-}
-main {
-  display: flex;
-  min-height: 100vh;
-  @media screen and (min-width: $laptop-up) {
-    margin-left: 5rem;
-  }
-}
-.welcome,
-.slide-container {
-  @media screen and (max-width: $tablet-down) {
-    height: 95vh;
-  }
-}
-.welcome {
-  .scroll-down {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    border: 1px solid rgba($color: $secondary-color, $alpha: 0.8);
-    border-radius: 20px;
-    width: 2rem;
-    height: 3.5rem;
-    padding: 0.5rem;
-    &::after {
-      content: "";
-      position: absolute;
-      background-color: $secondary-color;
-      width: 0.5rem;
-      height: 0.5rem;
-      border-radius: 50%;
-      margin: 0 auto;
-      animation-name: scroll-down;
-      animation-duration: 1500ms;
-      animation-iteration-count: infinite;
-    }
-  }
-}
-.slide-container {
-  height: 100%;
-  &__image {
-    flex: 0 0 85%;
-    background-color: $black;
-    color: $white;
-    img {
-      width: 100%;
-      background-color: $secondary-color;
-    }
-  }
-  &__controls {
-    flex: 0 0 15%;
-    .slide-container__indicators {
-      span {
-        display: inline-block;
-        width: 0.8rem;
-        height: 0.8rem;
-        border: 2px solid $secondary-light-color;
-        border-radius: 50%;
-        transition: 1000ms;
-        &:not(:last-child) {
-          margin-right: 0.2rem;
-        }
-      }
-      .current-slide {
-        transform: scale(1.3);
-        background-color: $secondary-color;
-      }
-    }
-  }
-  .prev,
-  .next {
-    border: 1px solid transparent;
-    cursor: pointer;
-    &:hover {
-      border: 1px solid rgba($color: $black, $alpha: 0.6);
-    }
-  }
-}
-
-.page {
-  display: none;
-  width: 100%;
-  height: 100vh;
-  // flex: 1;
-  // margin: 0 auto;
-}
-.current-page {
-  display: block;
-  & > div {
-    height: 100%;
-  }
-}
-
-section[data-page="skills"] {
-  ul {
-    width: 100%;
-    @media screen and (min-width: $laptop-up) {
-      width: 60%;
-    }
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(var(--spacing5), var(--spacing7))
-    );
-    justify-content: center;
-    gap: var(--spacing2);
-  }
-  li {
-    display: flex;
-    background-color: $white;
-    border: 1px solid rgba($color: #ddd, $alpha: 0.4);
-    border-radius: 5px;
-    min-height: var(--spacing7);
-  }
-}
-.bg-r {
-  background-color: $background-color;
-}
-.bg-s {
-  background-color: $secondary-color;
-}
-.bg-p {
-  background-color: $primary-color;
 }
