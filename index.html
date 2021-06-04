@@ -4,53 +4,87 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./script.js" defer></script>
     <link rel="stylesheet" href="css/styles.css" />
-    <!-- <link
+    <script
+      src="https://kit.fontawesome.com/9ea8102187.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,600&display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    /> -->
-    <title>Oluwaseun Abiola</title>
+    />
+    <title>Oluwaseun Abiola - Frontend Developer</title>
   </head>
   <body>
-    <div class="container m0a">
-      <header class="flex flex-ai-c lh-5 ph-3">
-        <div id="menu-icon" class="menu-icon flex flex-fd-c flex-jc-c hide-ows">
+    <header class="lh-5">
+      <div class="wrapper flex flex-ai-c flex-jc-c">
+        <div
+          id="menu-icon"
+          class="menu-icon flex flex-fd-c flex-jc-c flex-ai-c hide-ows"
+        >
           <span></span><span></span><span></span>
         </div>
-        <div class="logo">OOA</div>
+        <div class="logo ff-playfair fs-2 fw-600">OluabiolaSeun</div>
         <nav class="fw-500">
           <ul class="lh-1">
             <li>
-              <a href="#" class="route active-route" title="Homepage">Home</a>
+              <a id="route" class="active-route" href="#" title="Homepage"
+                ><i class="fas fa-home"></i>Home</a
+              >
             </li>
             <li>
-              <a href="#" class="route" title="About Me">About</a>
+              <a id="route" href="#" title="About Me"
+                ><i class="fas fa-user"></i>About</a
+              >
             </li>
             <li>
-              <a href="#" class="route" title="Portfolio">Portfolio</a>
+              <a id="route" href="#" title="Works"
+                ><i class="fas fa-briefcase"></i>Works</a
+              >
             </li>
             <li>
-              <a href="#" class="route" title="Skills">Skills</a>
+              <a id="route" href="#" title="Skills"
+                ><i class="fas fa-tools"></i>Skills</a
+              >
             </li>
           </ul>
         </nav>
-      </header>
-      <main>
-        <section class="hero">
-          <div class="ph-3">
-            <h1 class="hero__name flex fw-600">I'm Oluwaseun</h1>
-            <div class="hero__role mb-1">Freelance Frontend Developer</div>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="wrapper">
+          <div class="hero__img-container m0a">Photo</div>
+          <div class="hero__details">
+            <h1 class="hero__name fw-600">I'm Oluwaseun</h1>
+            <div class="hero__role mb-1">Frontend Web Developer</div>
             <div>
               <button class="btn btn-primary">Email me</button>
             </div>
           </div>
-          <div>Photo</div>
+          <div class="hero__social-media flex">
+            <div title="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </div>
+            <div title="Twitter"><i class="fab fa-twitter"></i></div>
+            <div style="font-size: 1.5rem" title="Github">
+              <i class="fab fa-github"></i>
+            </div>
+          </div>
           <!-- TODO: Insert picture here -->
           <!-- TODO: Insert social media handles -->
-        </section>
-        <!-- End of Hero section -->
-        <section class="about row pv-5 ph-3">
-          <header class="col-l-50"><h2>About Me</h2></header>
+        </div>
+      </section>
+      <!-- End of Hero section -->
+      <section class="about row pv-5">
+        <div class="wrapper">
+          <header class="col-l-50">
+            <i class="fas fa-user-tie"></i>
+            <h2>About Me</h2>
+          </header>
           <div class="col-l-50">
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste
@@ -67,87 +101,96 @@
               iusto rem.
             </p>
           </div>
-        </section>
-        <!-- End of about section -->
-      </main>
-    </div>
-    <!-- End of container div  -->
-    <script>
-      function __(selector) {
-        return document.querySelectorAll(selector);
-      }
-      function _(selector) {
-        return document.querySelector(selector);
-      }
-
-      _("#menu-icon").addEventListener("click", function () {
-        _("#menu-icon").classList.toggle("menu-close");
-        _("nav").classList.toggle("nav-open");
-      });
-
-      const routes = __(".route");
-      const routesLength = routes.length;
-
-      routes.forEach(function (route) {
-        route.addEventListener("click", (e) => {
-          e.preventDefault();
-          // Remove active-route class from all routes and add
-          // to the clicked route
-          for (let i = 0; i < routesLength; i++) {
-            routes[i].classList.remove("active-route");
-          }
-          route === e.target && route.classList.add("active-route");
-          // Close menu list
-          _("#menu-icon").classList.remove("menu-close");
-          _("nav").classList.remove("nav-open");
-          // TODO: navigate to the corresponding route
-        });
-      });
-
-      // let currentSlide = 1;
-      // const slideChangeInterval = 3000;
-
-      // let loop;
-      // function showSlides() {
-      //   const slides = __(".slide");
-      //   const slidesIndicator = __("#slide-indicator");
-      //   const slidesCount = slides.length;
-      //   const slidesIndicatorCount = slidesIndicator.length;
-
-      //   if (currentSlide > slidesCount) {
-      //     currentSlide = 1;
-      //   }
-      //   if (currentSlide < 1) {
-      //     currentSlide = slidesCount;
-      //   }
-
-      //   for (let i = 0; i < slidesCount; i++) {
-      //     slides[i].style.display = "none";
-      //   }
-      //   for (let i = 0; i < slidesIndicatorCount; i++) {
-      //     slidesIndicator[i].classList.remove("current-slide");
-      //   }
-      //   slides[currentSlide - 1].style.display = "block";
-      //   slidesIndicator[currentSlide - 1].classList.add("current-slide");
-
-      //   loop = setTimeout(function () {
-      //     currentSlide++;
-      //     showSlides();
-      //   }, slideChangeInterval);
-      // }
-
-      // _("#next").addEventListener("click", function () {
-      //   clearTimeout(loop);
-      //   currentSlide++;
-      //   showSlides();
-      // });
-      // _("#prev").addEventListener("click", function () {
-      //   clearTimeout(loop);
-      //   currentSlide--;
-      //   showSlides();
-      // });
-
-      // showSlides();
-    </script>
+        </div>
+      </section>
+      <!-- End of about section -->
+      <section class="works row pv-5">
+        <div class="wrapper">
+          <header class="col-l-50">
+            <i class="fas fa-briefcase"></i>
+            <h2>Works</h2>
+          </header>
+          <div class="col-l-50">
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste
+              vitae voluptatem officiis, ut laborum culpa vel, nesciunt quod eos
+              dolor numquam voluptatibus corporis dolorum sapiente, illum modi
+              et consequatur.
+            </p>
+            <p class="pv-2">
+              Nostrum soluta qui quia commodi, quas quis doloremque consectetur
+              provident dignissimos quaerat ab odio, enim eum veritatis animi
+              cupiditate iste nesciunt aspernatur distinctio illo
+              necessitatibus, in ipsa placeat! Necessitatibus, dolorem? Est
+              dolores consequatur quae quaerat doloribus. Fugit nam debitis
+              iusto rem.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- End of works section -->
+      <section class="skills row pv-5">
+        <div class="wrapper">
+          <header class="col-l-50">
+            <i class="fas fa-tools"></i>
+            <h2>Skills</h2>
+          </header>
+          <div>
+            <ul>
+              <li>
+                <i class="fab fa-html5"></i>
+              </li>
+              <li>
+                <i class="fab fa-css3"></i>
+              </li>
+              <li>
+                <i class="fab fa-js"></i>
+              </li>
+              <li>
+                <i class="fab fa-react"></i>
+              </li>
+              <li>
+                <i class="fab fa-sass"></i>
+              </li>
+              <li>
+                <i class="fab fa-git-alt"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- End of skills section -->
+      <section class="contact row pv-5">
+        <div class="wrapper">
+          <header class="col-l-50">
+            <i class="fas fa-tools"></i>
+            <h2>Reach Me</h2>
+          </header>
+          <div>
+            <ul>
+              <li>
+                <i class="fab fa-html5"></i>
+              </li>
+              <li>
+                <i class="fab fa-css3"></i>
+              </li>
+              <li>
+                <i class="fab fa-js"></i>
+              </li>
+              <li>
+                <i class="fab fa-react"></i>
+              </li>
+              <li>
+                <i class="fab fa-sass"></i>
+              </li>
+              <li>
+                <i class="fab fa-git-alt"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- End of contact section -->
+    </main>
   </body>
 </html>

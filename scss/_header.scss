@@ -1,0 +1,97 @@
+/* Main Header
+---------------------------------------*/
+body > header {
+  //   background-color: brown;
+  position: absolute;
+  width: 100vw;
+  justify-content: center;
+  @media screen and (min-width: $laptop-up) {
+    justify-content: space-between;
+  }
+  .menu-icon {
+    background-color: $primary-color;
+    position: fixed;
+    right: 3rem;
+    bottom: 3rem;
+    width: var(--spacing3);
+    height: var(--spacing3);
+    border-radius: 5px;
+    transition: 350ms;
+    z-index: 3;
+    overflow: hidden;
+    span {
+      position: absolute;
+      width: 70%;
+      height: 1.2px;
+      background-color: $white;
+      transition: 500ms;
+      transition-delay: 100ms;
+      &:first-child {
+        transform: translateY(-7px);
+      }
+      &:last-child {
+        transform: translateY(7px);
+      }
+    }
+  }
+  .menu-close {
+    margin-top: 1.5rem;
+    span {
+      &:first-child {
+        transform: translateY(0) rotate(45deg);
+      }
+      &:nth-child(2) {
+        transform: translateX(-55px);
+      }
+      &:last-child {
+        transform: translateY(0) rotate(-45deg);
+      }
+    }
+  }
+  nav {
+    position: fixed;
+    min-height: 25vh;
+    bottom: -50vh;
+    background-color: $white;
+    transition: 500ms;
+    padding: 2em;
+    z-index: 2;
+    ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    ul > li {
+      margin: 1.4rem 0.7rem;
+      margin-top: 0;
+    }
+    ul > li > a {
+      border: 1px solid rgba($color: $black, $alpha: 0.3);
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 1.5em;
+      font-size: 0.9rem;
+
+      i {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      &:hover {
+        border: 1px solid rgba($color: $primary-color, $alpha: 0.3);
+        color: $primary-color;
+      }
+    }
+  }
+  .nav-open {
+    bottom: 0vh;
+    width: 100vw;
+    box-shadow: 0 3px 20px #aaa;
+
+    .active-route {
+      border: 1px solid rgba($color: $primary-color, $alpha: 0.3);
+      color: $primary-color;
+    }
+  }
+}

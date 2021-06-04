@@ -5,6 +5,7 @@
   --spacing5: 5rem;
   --spacing7: 7rem;
   --spacing10: 10rem;
+
   @media screen and (min-width: $tablet-up) {
     --spacing1: 1.807rem;
     --spacing2: 3.614rem;
@@ -112,7 +113,9 @@
 .italic {
   font-style: italic;
 }
-
+.fs-2 {
+  font-size: 2rem;
+}
 .fw-900 {
   font-weight: 900;
 }

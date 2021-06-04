@@ -1,0 +1,84 @@
+@import "variables";
+@import "header";
+@import "hero";
+@import "skills";
+@import "about";
+@import "flexi";
+@import "keyframes";
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;900&display=swap");
+
+:root {
+  --spacing1: 1rem;
+  --spacing2: 2rem;
+  --spacing3: 3rem;
+  --spacing5: 5rem;
+  --spacing7: 7rem;
+  --spacing10: 10rem;
+
+  @media screen and (min-width: $tablet-up) {
+    --spacing1: 1.807rem;
+    --spacing2: 3.614rem;
+    --spacing3: 5.421rem;
+    --spacing5: 9.035rem;
+    --spacing7: 12.649rem;
+    --spacing10: 18.07rem;
+  }
+
+  @media screen and (min-width: $laptop-up) {
+    --spacing1: 2.4033rem;
+    --spacing2: 4.807rem;
+    --spacing3: 7.21rem;
+    --spacing5: 12.017rem;
+    --spacing7: 16.823rem;
+    --spacing10: 24.033rem;
+  }
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 12px;
+  @media screen and (min-width: $laptop-up) {
+    font-size: 16px;
+  }
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
+body {
+  scroll-behavior: smooth;
+  font-size: 1.2rem;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+  width: 100vw;
+  height: 100vh;
+}
+
+.wrapper {
+  width: 85%;
+  max-width: 960px;
+  margin: 0 auto;
+  // background-color: blueviolet;
+}
+.row header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto 3rem auto;
+  //   background-color: blueviolet;
+  i {
+    margin-right: 0.5rem;
+  }
+}
