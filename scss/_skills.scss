@@ -1,0 +1,40 @@
+/* Skills
+---------------------------------------*/
+.skills ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  & > li {
+    background-color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 6rem;
+    min-height: 6rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    border: 1px solid rgba($color: #555, $alpha: 0.1);
+    box-shadow: 0 1px 20px 1px #efefef;
+    font-size: 3rem;
+    margin: 1rem;
+  }
+  .fa-html5 {
+    color: #e34c26;
+  }
+  .fa-css3 {
+    color: #264de4;
+  }
+  .fa-js {
+    color: #f0db4f;
+  }
+  .fa-react {
+    color: #61dbfb;
+  }
+  .fa-sass {
+    color: #cd6799;
+  }
+  .fa-git-alt {
+    color: #f34f29;
+  }
+}

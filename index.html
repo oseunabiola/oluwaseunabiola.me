@@ -4,240 +4,193 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./script.js" defer></script>
     <link rel="stylesheet" href="css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/9ea8102187.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,600&display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <title>Oluwaseun Abiola</title>
+    <title>Oluwaseun Abiola - Frontend Developer</title>
   </head>
   <body>
-    <div class="container">
-      <header class="flex">
-        <div class="menu" id="menu">
+    <header class="lh-5">
+      <div class="wrapper flex flex-ai-c flex-jc-c">
+        <div
+          id="menu-icon"
+          class="menu-icon flex flex-fd-c flex-jc-c flex-ai-c hide-ows"
+        >
           <span></span><span></span><span></span>
         </div>
-        <div class="logo pv-1 ph-1">OOA</div>
-        <nav>
-          <ul class="flex flex-fd-c">
+        <div class="logo ff-playfair fs-2 fw-600">OluabiolaSeun</div>
+        <nav class="fw-500">
+          <ul class="lh-1">
             <li>
-              <a
-                href="#"
-                data-route="home"
-                title="Homepage"
-                class="route flex flex-jc-c flex-ai-c ph-2"
-                ><i class="fa fa-home" aria-hidden="true"></i
-              ></a>
+              <a id="route" class="active-route" href="#" title="Homepage"
+                ><i class="fas fa-home"></i>Home</a
+              >
             </li>
             <li>
-              <a
-                href="#"
-                data-route="about"
-                class="route flex flex-jc-c flex-ai-c ph-2"
-                title="About Me"
-                ><i class="fa fa-info-circle" aria-hidden="true"></i>
-              </a>
+              <a id="route" href="#" title="About Me"
+                ><i class="fas fa-user"></i>About</a
+              >
             </li>
             <li>
-              <a
-                href="#"
-                data-route="portfolio"
-                title="Portfolio"
-                class="route flex flex-jc-c flex-ai-c ph-2"
-                ><i class="fa fa-briefcase" aria-hidden="true"></i
-              ></a>
+              <a id="route" href="#" title="Works"
+                ><i class="fas fa-briefcase"></i>Works</a
+              >
             </li>
             <li>
-              <a
-                href="#"
-                data-route="skills"
-                title="Skills"
-                class="route flex flex-jc-c flex-ai-c ph-2"
-                ><i class="fa fa-cogs" aria-hidden="true"></i
-              ></a>
+              <a id="route" href="#" title="Skills"
+                ><i class="fas fa-tools"></i>Skills</a
+              >
             </li>
           </ul>
         </nav>
-      </header>
-      <main>
-        <section class="page" data-page="home">
-          <div
-            class="
-              welcome
-              flex flex-fd-c flex-jc-c flex-ai-c flex-wrap
-              col-l-60
-              ph-1
-              pv-3
-            "
-          >
-            <p class="fw-700 color-sec">Hello</p>
-            <span class="fs-3 lh-1 fw-700 color-white lspacing--2">
-              I'm Oluwaseun
-            </span>
-            <p class="pv-0-5 color-white fs-1-5 fw-500">
-              I am a Frontend Developer
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="wrapper">
+          <div class="hero__img-container m0a">Photo</div>
+          <div class="hero__details">
+            <h1 class="hero__name fw-600">I'm Oluwaseun</h1>
+            <div class="hero__role mb-1">Frontend Web Developer</div>
+            <div>
+              <button class="btn btn-primary">Email me</button>
+            </div>
+          </div>
+          <div class="hero__social-media flex">
+            <div title="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </div>
+            <div title="Twitter"><i class="fab fa-twitter"></i></div>
+            <div style="font-size: 1.5rem" title="Github">
+              <i class="fab fa-github"></i>
+            </div>
+          </div>
+          <!-- TODO: Insert picture here -->
+          <!-- TODO: Insert social media handles -->
+        </div>
+      </section>
+      <!-- End of Hero section -->
+      <section class="about row pv-5">
+        <div class="wrapper">
+          <header class="col-l-50">
+            <i class="fas fa-user-tie"></i>
+            <h2>About Me</h2>
+          </header>
+          <div class="col-l-50">
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste
+              vitae voluptatem officiis, ut laborum culpa vel, nesciunt quod eos
+              dolor numquam voluptatibus corporis dolorum sapiente, illum modi
+              et consequatur.
             </p>
-            <div class="pv-0-5">
-              <a
-                href="mailto:oluabiolaseun@gmail.com"
-                class="btn btn-primary cta"
-                >Email Me</a
-              >
-            </div>
-            <div class="hide-ows">
-              <span class="scroll-down"></span>
-            </div>
+            <p class="pv-2">
+              Nostrum soluta qui quia commodi, quas quis doloremque consectetur
+              provident dignissimos quaerat ab odio, enim eum veritatis animi
+              cupiditate iste nesciunt aspernatur distinctio illo
+              necessitatibus, in ipsa placeat! Necessitatibus, dolorem? Est
+              dolores consequatur quae quaerat doloribus. Fugit nam debitis
+              iusto rem.
+            </p>
           </div>
-
-          <div class="col-l-40 bg-r slide-container flex flex-fd-c">
-            <div class="slide-container__image flex flex-jc-c flex-ai-c">
-              <img src="#" alt="Slide 1" class="slide slide1" />
-              <img src="#" alt="Slide 2" class="slide slide2" />
-              <img src="#" alt="Slide 3" class="slide slide3" />
-              <img src="#" alt="Slide 4" class="slide slide4" />
-              <img src="#" alt="Slide 5" class="slide slide5" />
-              <img src="#" alt="Slide 6" class="slide slide6" />
-            </div>
-            <div
-              class="slide-container__controls flex flex-jc-sb flex-ai-c ph-2"
-            >
-              <div>
-                <span id="prev" class="prev pv-1 ph-1 mr-1"
-                  ><i class="fa fa-long-arrow-left"></i
-                ></span>
-                <span id="next" class="next pv-1 ph-1"
-                  ><i class="fa fa-long-arrow-right"></i
-                ></span>
-              </div>
-              <div class="slide-container__indicators">
-                <span id="slide-indicator"></span>
-                <span id="slide-indicator"></span>
-                <span id="slide-indicator"></span>
-                <span id="slide-indicator"></span>
-                <span id="slide-indicator"></span>
-                <span id="slide-indicator"></span>
-              </div>
-            </div>
+        </div>
+      </section>
+      <!-- End of about section -->
+      <section class="works row pv-5">
+        <div class="wrapper">
+          <header class="col-l-50">
+            <i class="fas fa-briefcase"></i>
+            <h2>Works</h2>
+          </header>
+          <div class="col-l-50">
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste
+              vitae voluptatem officiis, ut laborum culpa vel, nesciunt quod eos
+              dolor numquam voluptatibus corporis dolorum sapiente, illum modi
+              et consequatur.
+            </p>
+            <p class="pv-2">
+              Nostrum soluta qui quia commodi, quas quis doloremque consectetur
+              provident dignissimos quaerat ab odio, enim eum veritatis animi
+              cupiditate iste nesciunt aspernatur distinctio illo
+              necessitatibus, in ipsa placeat! Necessitatibus, dolorem? Est
+              dolores consequatur quae quaerat doloribus. Fugit nam debitis
+              iusto rem.
+            </p>
           </div>
-        </section>
-        <section class="page ph-3 pv-3" data-page="about">
-          <div class="flex flex-ai-c flex-wrap bg-r col-l-50 ph-1 pv-1">
-            <div class="photo-grid">
-              <span class="bg-s"></span><span class="bg-s"></span>
-              <span class="bg-s"></span><span class="bg-s"></span>
-            </div>
-          </div>
-          <div class="flex flex-fd-c flex-ai-c col-l-50 ph-1 pv-2">
-            <header class="fw-900 fs-4">About</header>
-            Oluwaseun Abiola is a front-end developer passionate about making
-            user friendly and safe app. When he's not coding, you can find me
-            geeking about photography, trying new food recipes, and exploring
-            different ways of creating content that can help people pivot their
-            tech careers.
-          </div>
-        </section>
-        <section class="page flex-jc-c flex-ai-c" data-page="portfolio">
-          Portfolio
-        </section>
-        <section class="page" data-page="skills">
-          <div class="flex flex-jc-c flex-ai-c">
-            <ul class="grid mh-2 pv-2 bg-s">
-              <li>HTML5</li>
-              <li>CSS3</li>
-              <li>JS</li>
-              <li>Sass</li>
-              <li>React</li>
-              <li>GIT VS</li>
+        </div>
+      </section>
+      <!-- End of works section -->
+      <section class="skills row pv-5">
+        <div class="wrapper">
+          <header class="col-l-50">
+            <i class="fas fa-tools"></i>
+            <h2>Skills</h2>
+          </header>
+          <div>
+            <ul>
+              <li>
+                <i class="fab fa-html5"></i>
+              </li>
+              <li>
+                <i class="fab fa-css3"></i>
+              </li>
+              <li>
+                <i class="fab fa-js"></i>
+              </li>
+              <li>
+                <i class="fab fa-react"></i>
+              </li>
+              <li>
+                <i class="fab fa-sass"></i>
+              </li>
+              <li>
+                <i class="fab fa-git-alt"></i>
+              </li>
             </ul>
           </div>
-        </section>
-      </main>
-    </div>
-    <script>
-      function __(selector) {
-        return document.querySelectorAll(selector);
-      }
-      function _(selector) {
-        return document.querySelector(selector);
-      }
-
-      _("#menu").addEventListener("click", function () {
-        _("#menu").classList.toggle("close-menu");
-        _("nav").classList.toggle("nav-open");
-      });
-
-      let currentPage = "skills";
-      const pages = __(".page");
-
-      function showCurrentPage() {
-        pages.forEach(function (page) {
-          page.classList.remove("current-page");
-        });
-
-        for (let i = 0; i < pages.length; i++) {
-          pages[i].dataset.page === currentPage &&
-            pages[i].classList.add("current-page");
-        }
-      }
-
-      showCurrentPage();
-      function setCurrentPage(page) {
-        currentPage = page;
-      }
-      __(".route").forEach(function (route) {
-        route.addEventListener("click", (e) => {
-          e.preventDefault();
-          setCurrentPage(route.dataset.route);
-          _("#menu").classList.remove("close-menu");
-          _("nav").classList.remove("nav-open");
-          showCurrentPage();
-        });
-      });
-
-      let currentSlide = 1;
-      const slideChangeInterval = 3000;
-
-      let loop;
-      function showSlides() {
-        const slides = __(".slide");
-        const slidesIndicator = __("#slide-indicator");
-        const slidesCount = slides.length;
-        const slidesIndicatorCount = slidesIndicator.length;
-
-        if (currentSlide > slidesCount) {
-          currentSlide = 1;
-        }
-        if (currentSlide < 1) {
-          currentSlide = slidesCount;
-        }
-
-        for (let i = 0; i < slidesCount; i++) {
-          slides[i].style.display = "none";
-        }
-        for (let i = 0; i < slidesIndicatorCount; i++) {
-          slidesIndicator[i].classList.remove("current-slide");
-        }
-        slides[currentSlide - 1].style.display = "block";
-        slidesIndicator[currentSlide - 1].classList.add("current-slide");
-
-        loop = setTimeout(function () {
-          currentSlide++;
-          showSlides();
-        }, slideChangeInterval);
-      }
-
-      _("#next").addEventListener("click", function () {
-        clearTimeout(loop);
-        currentSlide++;
-        showSlides();
-      });
-      _("#prev").addEventListener("click", function () {
-        clearTimeout(loop);
-        currentSlide--;
-        showSlides();
-      });
-
-      showSlides();
-    </script>
+        </div>
+      </section>
+      <!-- End of skills section -->
+      <section class="contact row pv-5">
+        <div class="wrapper">
+          <header class="col-l-50">
+            <i class="fas fa-tools"></i>
+            <h2>Reach Me</h2>
+          </header>
+          <div>
+            <ul>
+              <li>
+                <i class="fab fa-html5"></i>
+              </li>
+              <li>
+                <i class="fab fa-css3"></i>
+              </li>
+              <li>
+                <i class="fab fa-js"></i>
+              </li>
+              <li>
+                <i class="fab fa-react"></i>
+              </li>
+              <li>
+                <i class="fab fa-sass"></i>
+              </li>
+              <li>
+                <i class="fab fa-git-alt"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- End of contact section -->
+    </main>
   </body>
 </html>

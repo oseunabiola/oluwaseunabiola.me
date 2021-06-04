@@ -1,0 +1,57 @@
+/* Hero section
+------------------------------------*/
+.hero {
+  min-height: 100vh;
+  padding: 23vh 0;
+
+  &__img-container {
+    width: 50%;
+    min-height: 50px;
+    background-color: $primary-color;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__details {
+    margin-top: 5rem;
+    text-align: center;
+  }
+  &__name {
+    font-size: 2.8rem;
+  }
+  &__role {
+    font-size: 1.7rem;
+    color: #666;
+  }
+  @media screen and (min-width: $laptop-up) {
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+  }
+
+  &__social-media {
+    position: absolute;
+    bottom: 3rem;
+    & > div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 2.3rem;
+      height: 2.3rem;
+      background-color: black;
+      color: white;
+      border-radius: 50%;
+
+      &:not(:last-of-type) {
+        margin-right: 0.7rem;
+      }
+    }
+    & > div:nth-of-type(1) {
+      background-color: #0072b1;
+    }
+    & > div:nth-of-type(2) {
+      background-color: #1da1f2;
+    }
+  }
+}
