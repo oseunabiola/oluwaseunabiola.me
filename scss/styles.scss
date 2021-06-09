@@ -1,12 +1,14 @@
 @import "variables";
 @import "header";
 @import "hero";
-@import "skills";
 @import "about";
+@import "portfolio";
+@import "skills";
+@import "contact";
 @import "flexi";
 @import "keyframes";
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap");
 
 :root {
   --spacing1: 1rem;

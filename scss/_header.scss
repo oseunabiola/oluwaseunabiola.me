@@ -15,7 +15,7 @@ body > header {
     bottom: 3rem;
     width: var(--spacing3);
     height: var(--spacing3);
-    border-radius: 5px;
+    border-radius: $border-radius;
     transition: 350ms;
     z-index: 3;
     overflow: hidden;
@@ -41,7 +41,7 @@ body > header {
         transform: translateY(0) rotate(45deg);
       }
       &:nth-child(2) {
-        transform: translateX(-55px);
+        opacity: 0;
       }
       &:last-child {
         transform: translateY(0) rotate(-45deg);

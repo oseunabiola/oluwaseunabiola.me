@@ -1,6 +1,6 @@
 /* Main Header
 ---------------------------------------*/
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap");
 body > header {
   position: absolute;
   width: 100vw;
@@ -62,8 +62,7 @@ body > header .menu-close span:first-child {
 }
 
 body > header .menu-close span:nth-child(2) {
-  -webkit-transform: translateX(-55px);
-          transform: translateX(-55px);
+  opacity: 0;
 }
 
 body > header .menu-close span:last-child {
@@ -148,6 +147,8 @@ body > header .nav-open .active-route {
   width: 50%;
   min-height: 50px;
   background-color: #23a455;
+  -webkit-clip-path: inset(10% 10% 10% 10% round 20%, 20%);
+          clip-path: inset(10% 10% 10% 10% round 20%, 20%);
 }
 
 .hero__img-container img {
@@ -210,6 +211,73 @@ body > header .nav-open .active-route {
   background-color: #1da1f2;
 }
 
+.photo-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+.photo-grid span {
+  border: 1px solid red;
+  height: 120px;
+}
+
+.portfolio {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.portfolio-item {
+  position: relative;
+  width: 100px;
+  max-width: 150px;
+  height: 100px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 100px;
+          flex: 1 0 100px;
+  margin: 0 1rem 2rem 1rem;
+  border-radius: 5px;
+  border: 1px solid rgba(85, 85, 85, 0.1);
+  -webkit-box-shadow: 0 1px 20px 1px #efefef;
+          box-shadow: 0 1px 20px 1px #efefef;
+  overflow: hidden;
+}
+
+.portfolio-item__screenshot-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
+
+.portfolio-item__screenshot-container img {
+  width: 100%;
+  height: auto;
+}
+
+.portfolio-item__name {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  inset: 0;
+  position: absolute;
+  font-size: smaller;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-transition: 350ms;
+  transition: 350ms;
+}
+
+.portfolio-item:hover .portfolio-item__name {
+  top: 70%;
+}
+
 /* Skills
 ---------------------------------------*/
 .skills ul {
@@ -270,16 +338,56 @@ body > header .nav-open .active-route {
   color: #f34f29;
 }
 
-.photo-grid {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+.contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-.photo-grid span {
-  border: 1px solid red;
-  height: 120px;
+.contact-item {
+  font-size: smaller;
+  font-weight: 600;
+  margin: 0 1rem 2rem 1rem;
+}
+
+.contact-item__icon {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  font-size: larger;
+  border: 1px solid rgba(85, 85, 85, 0.1);
+  border-color: rgba(35, 164, 85, 0.2);
+  overflow: hidden;
+  -webkit-transition: 350ms;
+  transition: 350ms;
+  -webkit-transition-delay: 100ms;
+          transition-delay: 100ms;
+}
+
+.contact-item__icon::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -50%;
+  z-index: -1;
+  -webkit-transition: 450ms;
+  transition: 450ms;
+}
+
+.contact-item:hover .contact-item__icon {
+  border-color: transparent;
+  color: #fff;
+}
+
+.contact-item:hover .contact-item__icon::before {
+  top: 0;
+  background-color: #23a455;
 }
 
 :root {

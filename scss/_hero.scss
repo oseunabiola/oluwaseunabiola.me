@@ -8,6 +8,7 @@
     width: 50%;
     min-height: 50px;
     background-color: $primary-color;
+    clip-path: inset(10% 10% 10% 10% round 20%, 20%);
 
     img {
       width: 100%;
