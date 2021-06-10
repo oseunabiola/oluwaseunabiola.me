@@ -144,8 +144,17 @@ body > header .nav-open .active-route {
 }
 
 .hero__img-container {
-  width: 50%;
-  min-height: 50px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  width: 200px;
+  min-height: 200px;
+  border-radius: 50%;
   background-color: #23a455;
   -webkit-clip-path: inset(10% 10% 10% 10% round 20%, 20%);
           clip-path: inset(10% 10% 10% 10% round 20%, 20%);
@@ -157,7 +166,7 @@ body > header .nav-open .active-route {
 }
 
 .hero__details {
-  margin-top: 5rem;
+  margin-top: 2rem;
   text-align: center;
 }
 
@@ -166,7 +175,7 @@ body > header .nav-open .active-route {
 }
 
 .hero__role {
-  font-size: 1.7rem;
+  font-size: 1.3rem;
   color: #666;
 }
 

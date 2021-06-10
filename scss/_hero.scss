@@ -5,10 +5,24 @@
   padding: 23vh 0;
 
   &__img-container {
-    width: 50%;
-    min-height: 50px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    width: 200px;
+    min-height: 200px;
+    border-radius: 50%;
     background-color: $primary-color;
     clip-path: inset(10% 10% 10% 10% round 20%, 20%);
+
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   width: 500px;
+    //   height: 500px;
+    //   background-color: #0072b1;
+    //   clip-path: ellipse(40% 29% at 50% 50%);
+    // }
 
     img {
       width: 100%;
@@ -16,14 +30,14 @@
     }
   }
   &__details {
-    margin-top: 5rem;
+    margin-top: 2rem;
     text-align: center;
   }
   &__name {
     font-size: 2.8rem;
   }
   &__role {
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     color: #666;
   }
   @media screen and (min-width: $laptop-up) {
