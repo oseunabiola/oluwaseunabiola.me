@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="Frontend Developer,Oluwaseun Abiola,Oluwaseun,Abiola"
+    />
+    <meta
+      name="description"
+      content="Check out Oluwaseun Abiola's profile and some of his frontend projects."
+    />
     <script src="./script.js" defer></script>
     <link rel="stylesheet" href="css/styles.css" />
     <script
@@ -11,231 +19,328 @@
       crossorigin="anonymous"
       defer
     ></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,600&display=swap"
+      rel="preload"
+      as="image"
+      href="https://picsum.photos/id/201/200/300"
+      crossorigin
+    />
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,900;1,400&display=swap"
       rel="stylesheet"
     />
+    <!-- Google font -->
     <title>Oluwaseun Abiola - Frontend Developer</title>
   </head>
   <body>
-    <header class="lh-5">
-      <div class="wrapper flex flex-ai-c flex-jc-c">
-        <div
-          id="menu-icon"
-          class="menu-icon flex flex-fd-c flex-jc-c flex-ai-c hide-ows"
-        >
-          <span></span><span></span><span></span>
+    <header class="main-header pv-3">
+      <div class="container">
+        <div class="row align-items-md-c">
+          <div class="brand col-12 col-md-3 ff-playfair-display fs-3 fw-500">
+            'SeunAbiola
+          </div>
+          <nav
+            class="
+              d-flex
+              align-items-c
+              col-12 col-md-8
+              ml-md-auto
+              justify-content-c justify-content-md-e
+            "
+          >
+            <!-- Navigation/menu toggle icon -->
+            <div
+              id="menu-icon"
+              class="
+                menu-icon
+                d-flex
+                fd-c
+                justify-content-c
+                align-items-c
+                d-md-none
+              "
+            >
+              <span></span><span></span><span></span>
+            </div>
+            <!-- Navigation/menu toggle icon -->
+            <div id="navigation" class="navigation fw-500">
+              <ul class="lh-1">
+                <li>
+                  <a href="#hero" title="Homepage" aria-current="page"
+                    ><i class="fas fa-home"></i>Home</a
+                  >
+                </li>
+                <li>
+                  <a href="#about" title="A bit about me"
+                    ><i class="fas fa-user"></i>About</a
+                  >
+                </li>
+                <li>
+                  <a href="#projects" title="Featured projects"
+                    ><i class="fas fa-briefcase"></i>Projects</a
+                  >
+                </li>
+                <li>
+                  <a href="#skills" title="Skills and Technologies"
+                    ><i class="fas fa-tools"></i>Skills</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </nav>
         </div>
-        <div class="logo ff-playfair fs-2 fw-600">OluabiolaSeun</div>
-        <nav class="fw-500">
-          <ul class="lh-1">
-            <li>
-              <a id="route" class="active-route" href="#" title="Homepage"
-                ><i class="fas fa-home"></i>Home</a
-              >
-            </li>
-            <li>
-              <a id="route" href="#" title="About Me"
-                ><i class="fas fa-user"></i>About</a
-              >
-            </li>
-            <li>
-              <a id="route" href="#" title="portfolio"
-                ><i class="fas fa-briefcase"></i>portfolio</a
-              >
-            </li>
-            <li>
-              <a id="route" href="#" title="Skills"
-                ><i class="fas fa-tools"></i>Skills</a
-              >
-            </li>
-          </ul>
-        </nav>
       </div>
     </header>
     <main>
-      <section class="hero">
-        <div class="wrapper">
-          <div class="hero__img-container m0a">
-            <img src="https://picsum.photos/200" alt="" />
-          </div>
-          <div class="hero__details">
-            <h1 class="hero__name fw-600">I'm Oluwaseun</h1>
-            <div class="hero__role mb-1">Frontend Web Developer</div>
-            <div>
-              <button class="btn btn-primary">Email me</button>
+      <section class="hero pv-5" id="hero">
+        <div class="container pt-5">
+          <div class="hero__img-container mh-auto mb-4" id="avatar"></div>
+          <div class="hero__details mb-5">
+            <h1 class="hero__name fw-900 ff-playfair-display">
+              Hey, I'm Oluwaseun Abiola
+            </h1>
+            <div class="hero__role mb-4">
+              <p>Frontend Developer</p>
+            </div>
+            <div class="pb-5">
+              <button class="btn btn-cta">Email Me</button>
             </div>
           </div>
-          <div class="hero__social-media flex">
+          <div class="hero__social-media d-flex">
             <div title="LinkedIn">
-              <i class="fab fa-linkedin-in"></i>
+              <a
+                href="https://linkedin.com/in/oluwaseunabiola"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
             </div>
-            <div title="Twitter"><i class="fab fa-twitter"></i></div>
+            <div title="Twitter">
+              <a
+                href="https://twitter.com/oseunabiola"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
             <div style="font-size: 1.5rem" title="Github">
-              <i class="fab fa-github"></i>
+              <a
+                href="https://github.com/oseunabiola"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+              >
+                <i class="fab fa-github"></i>
+              </a>
             </div>
           </div>
           <!-- TODO: Insert picture here -->
-          <!-- TODO: Insert social media handles -->
         </div>
       </section>
       <!-- End of Hero section -->
       <!-- Start of about section -->
-      <section class="about row pv-5">
-        <div class="wrapper">
-          <header class="col-l-50">
-            <i class="fas fa-user-tie"></i>
-            <h2>About Me</h2>
+      <section class="about pv-5" id="about">
+        <div class="container">
+          <header class="section__header">
+            <h2>A bit about me</h2>
           </header>
-          <div class="col-l-50">
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste
-              vitae voluptatem officiis, ut laborum culpa vel, nesciunt quod eos
-              dolor numquam voluptatibus corporis dolorum sapiente, illum modi
-              et consequatur.
+          <div>
+            <p class="mb-4">
+              Oluwaseun Abiola is a self-taught Frontend Developer passionate
+              about accessibility, responsive web design, and system
+              integration. He is an enthusiast of secure and user-friendly web
+              apps, scalable web apps, Information Systems, and a green
+              environment.
             </p>
-            <p class="pv-2">
-              Nostrum soluta qui quia commodi, quas quis doloremque consectetur
-              provident dignissimos quaerat ab odio, enim eum veritatis animi
-              cupiditate iste nesciunt aspernatur distinctio illo
-              necessitatibus, in ipsa placeat! Necessitatibus, dolorem? Est
-              dolores consequatur quae quaerat doloribus. Fugit nam debitis
-              iusto rem.
-            </p>
-            <button class="btn btn-primary">Download my CV</button>
+            <a
+              href="https://docs.google.com/document/d/e/2PACX-1vTei7UKXVm0baayd2myZ-5cGqpdXvKEqA41wn-9EnvGyqg52Ab2OXhthR2RsAs5-opOdqgoZdzNzPsh/pub"
+              class="btn btn-primary"
+              rel="noopener noreferrer"
+              target="_blank"
+              >View my CV</a
+            >
           </div>
         </div>
       </section>
       <!-- End of about section -->
-      <!-- Start of portfolio section -->
-      <section class="row pv-5">
-        <div class="wrapper">
-          <header class="col-l-50">
-            <i class="fas fa-briefcase"></i>
-            <h2>Portfolio</h2>
+      <!-- Start of projects section -->
+      <section class="projects pv-5" id="projects">
+        <div class="container">
+          <header class="section__header">
+            <h2>Featured Projects</h2>
           </header>
-          <div class="col-l-50">
-            <ul class="portfolio flex">
-              <li class="portfolio-item">
-                <div class="portfolio-item__screenshot-container">
-                  <img class="" src="https://picsum.photos/100" alt="" />
+          <div class="">
+            <ul class="project d-flex">
+              <li class="project-item">
+                <div class="project-item__screenshot-container">
+                  <img
+                    class=""
+                    src="https://picsum.photos/id/201/200/300"
+                    width="100"
+                    height="100"
+                    alt=""
+                  />
                 </div>
-                <div class="portfolio-item__name flex flex-jc-c">
-                  HWA Website
-                </div>
-              </li>
-              <li class="portfolio-item">
-                <div class="portfolio-item__screenshot-container">
-                  <img class="" src="https://picsum.photos/100" alt="" />
-                </div>
-                <div class="portfolio-item__name flex flex-jc-c">
-                  HWA Dashboard
-                </div>
-                <div class="portfolio-item__actions flex flex-jc-c">
-                  <p>V</p>
-                  <p>G</p>
-                </div>
-              </li>
-              <li class="portfolio-item">
-                <div class="portfolio-item__screenshot-container">
-                  <img class="" src="https://picsum.photos/100" alt="" />
-                </div>
-                <div class="portfolio-item__name flex flex-jc-c">
-                  Gasup Energy
-                </div>
-              </li>
-              <li class="portfolio-item">
-                <div class="portfolio-item__screenshot-container">
-                  <img class="" src="https://picsum.photos/100" alt="" />
-                </div>
-                <div class="portfolio-item__name flex flex-jc-c">
-                  JS Calculator
+                <div class="project-item__details">
+                  <p class="project-item__name mb-2">Placeholder Project</p>
+                  <p class="project-item__about mb-3">
+                    This is a placeholder project.
+                  </p>
+                  <div class="d-flex align-items-c justify-content-c">
+                    <div class="project-item__stack col-10">
+                      <span>HTML5</span><span>CSS3</span><span>JS</span>
+                    </div>
+
+                    <div class="project-item__show col-2">
+                      <a
+                        href="#"
+                        class="live"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-hidden="View live project"
+                        ><i class="fas fa-external-link-alt"></i
+                      ></a>
+                      <a
+                        href="#"
+                        class="source-code"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-hidden="View code on Github"
+                        ><i class="fab fa-github"></i
+                      ></a>
+                    </div>
+                  </div>
                 </div>
               </li>
             </ul>
           </div>
         </div>
       </section>
-      <!-- End of portfolio section -->
-      <section class="skills row pv-5">
-        <div class="wrapper">
-          <header class="col-l-50">
-            <i class="fas fa-tools"></i>
-            <h2>Skills</h2>
+      <!-- End of project section -->
+      <section class="skills pv-5" id="skills">
+        <div class="container">
+          <header class="section__header">
+            <h2>Skills &amp; Technologies</h2>
           </header>
-          <div>
-            <ul>
-              <li>
-                <i class="fab fa-html5"></i>
-              </li>
-              <li>
-                <i class="fab fa-css3"></i>
-              </li>
-              <li>
-                <i class="fab fa-js"></i>
-              </li>
-              <li>
-                <i class="fab fa-react"></i>
-              </li>
-              <li>
-                <i class="fab fa-sass"></i>
-              </li>
-              <li>
-                <i class="fab fa-git-alt"></i>
-              </li>
-            </ul>
-          </div>
+          <ul class="d-flex flex-wrap">
+            <li>
+              <i class="fab fa-html5"></i>
+              HTML5
+            </li>
+            <li><i class="fab fa-css3"></i> CSS3</li>
+            <li><i class="fab fa-js"></i> JavaScript</li>
+            <li><i class="fab fa-react"></i> ReactJS</li>
+            <li><i class="fab fa-sass"></i>SASS</li>
+            <li><i class="fab fa-bootstrap"></i>Bootstrap</li>
+            <li><i class="fab fa-git-alt"></i> Git & Github</li>
+          </ul>
         </div>
       </section>
       <!-- End of skills section -->
-      <section class="contact row pv-5">
-        <div class="wrapper">
-          <header class="col-l-50">
-            <i class="fas fa-tools"></i>
-            <h2>Reach Me</h2>
-          </header>
-          <div>
-            I am available for freelance opportunities or full-time role. Feel
-            free to contact me through any of the means listed below.
-            <ul class="contact">
-              <li class="contact-item">
-                <a class="flex flex-fd-c flex-ai-c" href="tel:+2347030903733">
-                  <div class="contact-item__icon flex flex-jc-c flex-ai-c mb-1">
-                    <i class="fas fa-phone-alt"></i>
-                  </div>
-                  <p>+234 (0) 703 090 3733</p>
-                </a>
-              </li>
-              <li class="contact-item">
-                <a
-                  class="flex flex-fd-c flex-ai-c"
-                  href="mailto:oluabiolaseun@gmail.com"
-                >
-                  <div class="contact-item__icon flex flex-jc-c flex-ai-c mb-1">
-                    <i class="fas fa-envelope"></i>
-                  </div>
-                  <p>oluabiolaseun@gmail.com</p>
-                </a>
-              </li>
-              <li class="contact-item">
-                <a
-                  class="flex flex-fd-c flex-ai-c"
-                  href="https://www.linkedin.com/in/oluwaseunabiola/"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <div class="contact-item__icon flex flex-jc-c flex-ai-c mb-1">
-                    <i class="fab fa-linkedin-in"></i>
-                  </div>
-                  <p>oluwaseunabiola</p>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      <!-- End of contact section -->
     </main>
+    <!-- End of container -->
+    <footer>
+      <div class="container pv-5">
+        <header class="mb-4">
+          <h2 class="ff-playfair-display">Reach Me</h2>
+        </header>
+        <p class="mb-4">
+          Feel free to contact me through any of the means listed below.
+        </p>
+        <ul class="contact">
+          <li class="contact-item">
+            <a
+              class="d-flex fd-c align-items-c"
+              href="tel:+2347030903733"
+              aria-hidden="+234 (0) 703 090 3733"
+            >
+              <div class="contact-item__icon-container mb-1">
+                <div
+                  class="
+                    contact-item__icon
+                    d-flex
+                    justify-content-c
+                    align-items-c
+                  "
+                >
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="contact-item">
+            <a
+              class="d-flex fd-c align-items-c"
+              href="mailto:oluabiolaseun@gmail.com"
+              aria-hidden="oluabiolaseun@gmail.com"
+            >
+              <div class="contact-item__icon-container mb-1">
+                <div
+                  class="
+                    contact-item__icon
+                    d-flex
+                    justify-content-c
+                    align-items-c
+                  "
+                >
+                  <i class="fas fa-envelope"></i>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="contact-item">
+            <a
+              class="d-flex fd-c align-items-c"
+              href="https://www.linkedin.com/in/oluwaseunabiola/"
+              rel="noopener noreferrer"
+              target="_blank"
+              aria-hidden="oluwaseunabiola"
+            >
+              <div class="contact-item__icon-container mb-1">
+                <div
+                  class="
+                    contact-item__icon
+                    d-flex
+                    justify-content-c
+                    align-items-c
+                  "
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="contact-item">
+            <a
+              class="d-flex fd-c align-items-c"
+              href="https://twitter.com/oseunabiola"
+              rel="noopener noreferrer"
+              target="_blank"
+              aria-hidden="oluAbiola"
+            >
+              <div class="contact-item__icon-container mb-1">
+                <div
+                  class="
+                    contact-item__icon
+                    d-flex
+                    justify-content-c
+                    align-items-c
+                  "
+                >
+                  <i class="fab fa-twitter"></i>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>

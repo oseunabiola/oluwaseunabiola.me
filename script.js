@@ -7,7 +7,7 @@ function _(selector) {
 
 _("#menu-icon").addEventListener("click", function () {
   _("#menu-icon").classList.toggle("menu-close");
-  _("nav").classList.toggle("nav-open");
+  _("#navigation").classList.toggle("nav-open");
 });
 
 const routes = __("#route");
@@ -73,3 +73,15 @@ routes.forEach(function (route) {
 // });
 
 // showSlides();
+
+// FETCH REQUESTS
+// fetch github profile and set profile avatar.
+(async () => {
+  const response = await fetch("https://api.github.com/users/oseunabiola");
+  const body = await response.json();
+  _("#avatar").style.backgroundImage = `url(${body.avatar_url})`;
+  // rgb(9, 119, 112)
+  _(
+    "#hero"
+  ).style.backgroundImage = `linear-gradient(rgba(9, 119, 112, 0.9), rgba(9, 119, 112, 0.95)), url(${body.avatar_url})`;
+})();

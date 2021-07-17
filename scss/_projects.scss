@@ -1,0 +1,42 @@
+.project {
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.project-item {
+  position: relative;
+  flex: 1 0 150px;
+  max-width: 300px;
+  margin: 0 1rem 2rem 1rem;
+  border: $light-border;
+  box-shadow: $primary-box-shadow;
+  overflow: hidden;
+
+  &__screenshot-container {
+    display: flex;
+    height: 250px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__name {
+    font-weight: 600;
+  }
+  &__details {
+    font-size: 0.7rem;
+    padding: 1rem;
+    span {
+      padding: 0.2rem 0.5rem;
+      border: 1px solid rgba($color: #000000, $alpha: 0.3);
+      margin-right: 0.3rem;
+    }
+  }
+  &__show {
+    margin-left: auto;
+    font-size: 1.3em;
+    a {
+      margin-left: 0.3rem;
+    }
+  }
+}

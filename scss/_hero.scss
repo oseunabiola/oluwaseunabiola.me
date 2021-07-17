@@ -1,53 +1,52 @@
 /* Hero section
 ------------------------------------*/
 .hero {
-  min-height: 100vh;
-  padding: 23vh 0;
-
-  &__img-container {
+  background-color: $primary-color;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: $white;
+  .container {
+    height: 100%;
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    overflow: hidden;
-    width: 200px;
-    min-height: 200px;
-    border-radius: 50%;
-    background-color: $primary-color;
-    clip-path: inset(10% 10% 10% 10% round 20%, 20%);
-
-    // &::before {
-    //   content: "";
-    //   position: absolute;
-    //   width: 500px;
-    //   height: 500px;
-    //   background-color: #0072b1;
-    //   clip-path: ellipse(40% 29% at 50% 50%);
-    // }
-
-    img {
-      width: 100%;
-      height: auto;
+    @media screen and (min-width: $md) {
+      max-width: 1200px;
     }
   }
+  &__img-container {
+    position: relative;
+    background-color: $primary-color;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 180px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+  }
   &__details {
-    margin-top: 2rem;
     text-align: center;
+    color: #ffffff;
   }
   &__name {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
+    line-height: 1.2;
   }
   &__role {
-    font-size: 1.3rem;
-    color: #666;
+    font-size: 1.2rem;
   }
-  @media screen and (min-width: $laptop-up) {
-    padding-top: 20vh;
-    padding-bottom: 20vh;
+  @media screen and (min-width: $lg) {
+    // padding-top: 20vh;
+    // padding-bottom: 20vh;
   }
 
   &__social-media {
     position: absolute;
-    bottom: 3rem;
+    left: 2rem;
+    bottom: -1rem;
     & > div {
       display: flex;
       justify-content: center;
