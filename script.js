@@ -26,7 +26,6 @@ navLinks.forEach(function (_navLink) {
     // Close menu list
     _("#menu-icon").classList.remove("menu-close");
     _("#navigation").classList.remove("nav-open");
-    // TODO: navigate to the corresponding route
     document.location = e.target.href;
   });
 });
