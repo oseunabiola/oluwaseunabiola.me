@@ -10,22 +10,24 @@ _("#menu-icon").addEventListener("click", function () {
   _("#navigation").classList.toggle("nav-open");
 });
 
-const routes = __("#route");
-const routesLength = routes.length;
+const navLinks = __(".nav-link");
+const navLinksLength = navLinks.length;
 
-routes.forEach(function (route) {
-  route.addEventListener("click", (e) => {
+navLinks.forEach(function (_navLink) {
+  _navLink.addEventListener("click", (e) => {
     e.preventDefault();
-    // Remove active-route class from all routes and add
+    // Remove aria-current tag from all routes and add
     // to the clicked route
-    for (let i = 0; i < routesLength; i++) {
-      routes[i].classList.remove("active-route");
+    for (let i = 0; i < navLinksLength; i++) {
+      navLinks[i].ariaCurrent = null;
     }
-    route === e.target && route.classList.add("active-route");
+    if (_navLink === e.target) _navLink.ariaCurrent = "page";
+
     // Close menu list
     _("#menu-icon").classList.remove("menu-close");
-    _("nav").classList.remove("nav-open");
+    _("#navigation").classList.remove("nav-open");
     // TODO: navigate to the corresponding route
+    document.location = e.target.href;
   });
 });
 
